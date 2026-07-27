@@ -40,13 +40,19 @@
         .dark .text { background: #333; }
         .dark .exam-box { background: #3a3324; border-color: #8c734b; }
         .dark input { background: #444; color: white; border-color: #555; }
+        /* 防复制样式 */
+        .text {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
 <body>
 <header>
     <h1>|尚儒升学_初中必背古诗文打卡通关 Soren参与制作|</h1>
     <p>人教版七—九年级上下册（全册通关版）</p>
-    <p>尚儒升学-杨老师微信：yangjingwenlaoshi</p>
 </header>
 
 <div class="controls">
@@ -69,6 +75,16 @@
 </div>
 
 <div id="list" class="container"></div>
+
+<!-- 免责声明卡片 -->
+<div class="card" style="margin-top:20px; color:#888; font-size:0.9em;">
+    <h3>免责声明</h3>
+    <p>1. 本工具内古诗文原文、作者及分类依据人教版初中语文教材整理，版权归原作者及出版社所有。注音仅供学习参考。</p>
+    <p>2. 本工具仅为背诵辅助练习，考核题目由系统自动生成，非正式考试标准，请以教材和教师指导为准。</p>
+    <p>3. 打卡进度存储于您的浏览器本地，不会上传服务器；清除浏览器数据可能导致进度丢失。</p>
+    <p>4. 请勿用于商业用途，个人学习、教学演示可自由使用。如有问题请联系我们。</p>
+    <p>使用本工具即视为同意以上声明。</p>
+</div>
 
 <script>
     // 完整数据库（与之前一致）
@@ -134,7 +150,7 @@
         localStorage.setItem("poems", JSON.stringify(poems));
     }
 
-    // 核心改动：随机给出上句或下句，答案填写另一半
+    // 随机给出上句或下句
     function generateExercises(poem) {
         let cleanText = poem.text.replace(/<rt>.*?<\/rt>/g, '').replace(/<[^>]+>/g, '');
         let sentences = cleanText.split(/[，。！？；\n]/).map(s => s.trim()).filter(s => s.length > 1);
@@ -142,7 +158,6 @@
         for (let i = 0; i < sentences.length - 1; i += 2) {
             let first = sentences[i];
             let second = sentences[i + 1];
-            // 随机决定展示哪一句作为问题
             if (Math.random() < 0.5) {
                 exercises.push({ given: first, expected: second });
             } else {
@@ -198,7 +213,8 @@
                 html += `<button class="btn-success" onclick="showExam(${realIndex})" style="margin-left:10px;">${isExamActive ? '关闭考核' : '开始考核'}</button>`;
             }
 
-            html += `<div class="text" id="text${realIndex}">${p.text}</div>`;
+            // 原文区加入防复制属性
+            html += `<div class="text" id="text${realIndex}" oncopy="return false;" oncut="return false;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">${p.text}</div>`;
 
             let exList = generateExercises(p);
             html += `<div class="exam-box${isExamActive ? ' show' : ''}" id="exam${realIndex}">`;
