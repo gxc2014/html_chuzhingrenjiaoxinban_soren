@@ -28,10 +28,10 @@
         rt { font-size: 0.55em; color: #777; }
         .exam-box { display: none; margin-top: 15px; background: #fffbe6; padding: 15px; border-radius: 10px; border: 1px dashed #e6a23c; }
         .exam-box.show { display: block; }
-        .question { margin-bottom: 16px; }
+        .question { margin-bottom: 14px; }
         .q-row { display: flex; align-items: center; gap: 10px; }
         .given-text { white-space: nowrap; font-weight: bold; color: #333; }
-        .question input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
+        .question input { width: 220px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
         .question input:focus { outline: none; border-color: #67c23a; }
         .err-msg { color: #f56c6c; font-size: 0.85em; display: none; margin-top: 4px; }
         .success-msg { display: none; color: #67c23a; font-weight: bold; text-align: center; margin-top: 15px; font-size: 1.2em; }
@@ -191,6 +191,8 @@
     ];
 
     let examActiveSet = new Set();
+    // 新增：缓存每个篇目的考核题目，保证提交时一致
+    let examCache = {};
     let saveData = localStorage.getItem("poems");
     if (saveData) {
         let localPoems = JSON.parse(saveData);
@@ -204,7 +206,7 @@
         localStorage.setItem("poems", JSON.stringify(poems));
     }
 
-    // 随机考核：随机展示上句或下句，并标记位置
+    // 随机考核：随机展示上句或下句
     function generateExercises(poem) {
         let cleanText = poem.text.replace(/<rt>.*?<\/rt>/g, '').replace(/<[^>]+>/g, '');
         let sentences = cleanText.split(/[，。！？；\n]/).map(s => s.trim()).filter(s => s.length > 1);
@@ -222,8 +224,7 @@
     }
 
     function resetExamInputs(index) {
-        let p = poems[index];
-        let exList = generateExercises(p);
+        let exList = examCache[index] || [];
         exList.forEach((ex, qIdx) => {
             let inputEl = document.getElementById(`ans_${index}_${qIdx}`);
             let errEl = document.getElementById(`err_${index}_${qIdx}`);
@@ -269,16 +270,17 @@
 
             html += `<div class="text" id="text${realIndex}" oncopy="return false;" oncut="return false;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">${p.text}</div>`;
 
-            let exList = generateExercises(p);
+            // 使用缓存的题目或空数组
+            let exList = examCache[realIndex] || [];
             html += `<div class="exam-box${isExamActive ? ' show' : ''}" id="exam${realIndex}">`;
             if (exList.length > 0) {
-                html += `<p style="color:#e6a23c; margin-top:0;"><strong>📝 考核：随机给出上句或下句，请填写另一句（自动忽略标点）</strong></p>`;
+                html += `<p style="color:#e6a23c; margin-top:0;"><strong>📝 考核：随机给出上句或下句，请填写另一句（忽略标点）</strong></p>`;
                 exList.forEach((ex, qIdx) => {
                     let rowHtml = '';
                     if (ex.isFirstGiven) {
-                        rowHtml = `<span class="given-text">${qIdx + 1}. ${ex.given}</span><input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入下句">`;
+                        rowHtml = `<span class="given-text">${ex.given}</span><input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入下句">`;
                     } else {
-                        rowHtml = `<input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入上句"><span class="given-text">${qIdx + 1}. ${ex.given}</span>`;
+                        rowHtml = `<input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入上句"><span class="given-text">${ex.given}</span>`;
                     }
                     html += `
                     <div class="question">
@@ -307,28 +309,40 @@
         let textBox = document.getElementById("text" + i);
         let viewBtn = document.getElementById("viewBtn_" + i);
         if (examBox.classList.contains("show")) {
+            // 关闭考核
             examBox.classList.remove("show");
             examActiveSet.delete(i);
+            delete examCache[i]; // 清除缓存
             if (viewBtn) viewBtn.style.display = 'inline-block';
             resetExamInputs(i);
         } else {
-            examBox.classList.add("show");
+            // 打开考核：生成新题目并缓存
+            let newExercises = generateExercises(poems[i]);
+            examCache[i] = newExercises;
             examActiveSet.add(i);
             if (viewBtn) viewBtn.style.display = 'none';
             if (textBox) textBox.classList.remove("show");
-            resetExamInputs(i);
+            // 重新渲染该卡片以显示新题目
+            render();
+            return;
         }
+        render();
     }
 
     function submitExam(index) {
         let p = poems[index];
-        let exList = generateExercises(p);
+        let exList = examCache[index];
+        if (!exList) {
+            alert("题目数据丢失，请重新打开考核");
+            return;
+        }
         let allCorrect = true;
         exList.forEach((ex, qIdx) => {
             let inputEl = document.getElementById(`ans_${index}_${qIdx}`);
             let errEl = document.getElementById(`err_${index}_${qIdx}`);
-            let userAns = inputEl.value.trim().replace(/[。，！？；\s]/g, "");
-            let standardAns = ex.expected.replace(/[。，！？；\s]/g, "");
+            if (!inputEl) return;
+            let userAns = inputEl.value.trim().replace(/[，,。.！!？?；;：:、""''（）《》【】\s]/g, "");
+            let standardAns = ex.expected.replace(/[，,。.！!？?；;：:、""''（）《》【】\s]/g, "");
             if (userAns === standardAns && userAns !== "") {
                 inputEl.style.borderColor = "#67c23a";
                 errEl.style.display = "none";
@@ -338,11 +352,13 @@
                 allCorrect = false;
             }
         });
+
         if (allCorrect) {
             document.getElementById('success_' + index).style.display = "block";
             poems[index].done = true;
             save();
             examActiveSet.delete(index);
+            delete examCache[index];
             let viewBtn = document.getElementById('viewBtn_' + index);
             if (viewBtn) viewBtn.style.display = 'inline-block';
             exList.forEach((ex, qIdx) => {
@@ -358,6 +374,7 @@
     function cancelCheck(i) {
         poems[i].done = false;
         examActiveSet.delete(i);
+        delete examCache[i];
         save();
         render();
     }
