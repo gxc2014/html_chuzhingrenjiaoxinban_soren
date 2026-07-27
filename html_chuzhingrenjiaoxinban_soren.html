@@ -14,7 +14,6 @@
             background: #f5f7fb;
             color: #333;
         }
-
         header {
             background: white;
             color: #333;
@@ -22,7 +21,6 @@
             padding: 25px;
             border-bottom: 1px solid #eee;
         }
-
         .controls {
             background: white;
             padding: 15px;
@@ -58,7 +56,6 @@
         .btn-view {
             background: #409eff;
         }
-
         .progress {
             background: white;
             margin: 15px;
@@ -77,7 +74,6 @@
             width: 0%;
             transition: width 0.3s;
         }
-
         .container {
             padding: 15px;
         }
@@ -96,7 +92,6 @@
             color: #888;
             font-size: 0.9em;
         }
-
         .text {
             display: none;
             margin-top: 15px;
@@ -117,7 +112,6 @@
             font-size: 0.55em;
             color: #777;
         }
-
         .exam-box {
             display: none;
             margin-top: 15px;
@@ -161,12 +155,10 @@
             margin-top: 15px;
             font-size: 1.2em;
         }
-
         .finished {
             border-left: 5px solid #67c23a;
             background: #f0f9eb;
         }
-
         .dark {
             background: #1e1e1e;
             color: #ddd;
@@ -193,7 +185,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>|尚儒升学_初中必背古诗文打卡通关 Soren参与制作|</h1>
         <p>人教版七—九年级上下册（全册通关版）</p>
@@ -228,379 +219,241 @@
         let poems = [
             /*************** 七年级上册 ****************/
             {
-                grade: "七年级上册",
-                type: "古诗",
-                title: "观沧海",
-                author: "曹操",
+                grade: "七年级上册", type: "古诗", title: "观沧海", author: "曹操",
                 text: "<ruby>东<rt>dōng</rt></ruby><ruby>临<rt>lín</rt></ruby><ruby>碣<rt>jié</rt></ruby><ruby>石<rt>shí</rt></ruby>，<ruby>以<rt>yǐ</rt></ruby><ruby>观<rt>guān</rt></ruby><ruby>沧<rt>cāng</rt></ruby><ruby>海<rt>hǎi</rt></ruby>。<br><ruby>水<rt>shuǐ</rt></ruby><ruby>何<rt>hé</rt></ruby><ruby>澹<rt>dàn</rt></ruby><ruby>澹<rt>dàn</rt></ruby>，<ruby>山<rt>shān</rt></ruby><ruby>岛<rt>dǎo</rt></ruby><ruby>竦<rt>sǒng</rt></ruby><ruby>峙<rt>zhì</rt></ruby>。<br><ruby>树<rt>shù</rt></ruby><ruby>木<rt>mù</rt></ruby><ruby>丛<rt>cóng</rt></ruby><ruby>生<rt>shēng</rt></ruby>，<ruby>百<rt>bǎi</rt></ruby><ruby>草<rt>cǎo</rt></ruby><ruby>丰<rt>fēng</rt></ruby><ruby>茂<rt>mào</rt></ruby>。<br><ruby>秋<rt>qiū</rt></ruby><ruby>风<rt>fēng</rt></ruby><ruby>萧<rt>xiāo</rt></ruby><ruby>瑟<rt>sè</rt></ruby>，<ruby>洪<rt>hóng</rt></ruby><ruby>波<rt>bō</rt></ruby><ruby>涌<rt>yǒng</rt></ruby><ruby>起<rt>qǐ</rt></ruby>。<br><ruby>日<rt>rì</rt></ruby><ruby>月<rt>yuè</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>行<rt>xíng</rt></ruby>，<ruby>若<rt>ruò</rt></ruby><ruby>出<rt>chū</rt></ruby><ruby>其<rt>qí</rt></ruby><ruby>中<rt>zhōng</rt></ruby>；<br><ruby>星<rt>xīng</rt></ruby><ruby>汉<rt>hàn</rt></ruby><ruby>灿<rt>càn</rt></ruby><ruby>烂<rt>làn</rt></ruby>，<ruby>若<rt>ruò</rt></ruby><ruby>出<rt>chū</rt></ruby><ruby>其<rt>qí</rt></ruby><ruby>里<rt>lǐ</rt></ruby>。<br><ruby>幸<rt>xìng</rt></ruby><ruby>甚<rt>shèn</rt></ruby><ruby>至<rt>zhì</rt></ruby><ruby>哉<rt>zāi</rt></ruby>，<ruby>歌<rt>gē</rt></ruby><ruby>以<rt>yǐ</rt></ruby><ruby>咏<rt>yǒng</rt></ruby><ruby>志<rt>zhì</rt></ruby>。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "古诗",
-                title: "闻王昌龄左迁龙标遥有此寄",
-                author: "李白",
+                grade: "七年级上册", type: "古诗", title: "闻王昌龄左迁龙标遥有此寄", author: "李白",
                 text: "<ruby>杨<rt>yáng</rt></ruby><ruby>花<rt>huā</rt></ruby><ruby>落<rt>luò</rt></ruby><ruby>尽<rt>jìn</rt></ruby><ruby>子<rt>zǐ</rt></ruby><ruby>规<rt>guī</rt></ruby><ruby>啼<rt>tí</rt></ruby>，<ruby>闻<rt>wén</rt></ruby><ruby>道<rt>dào</rt></ruby><ruby>龙<rt>lóng</rt></ruby><ruby>标<rt>biāo</rt></ruby><ruby>过<rt>guò</rt></ruby><ruby>五<rt>wǔ</rt></ruby><ruby>溪<rt>xī</rt></ruby>。<br><ruby>我<rt>wǒ</rt></ruby><ruby>寄<rt>jì</rt></ruby><ruby>愁<rt>chóu</rt></ruby><ruby>心<rt>xīn</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>明<rt>míng</rt></ruby><ruby>月<rt>yuè</rt></ruby>，<ruby>随<rt>suí</rt></ruby><ruby>君<rt>jūn</rt></ruby><ruby>直<rt>zhí</rt></ruby><ruby>到<rt>dào</rt></ruby><ruby>夜<rt>yè</rt></ruby><ruby>郎<rt>láng</rt></ruby><ruby>西<rt>xī</rt></ruby>。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "古诗",
-                title: "次北固山下",
-                author: "王湾",
+                grade: "七年级上册", type: "古诗", title: "次北固山下", author: "王湾",
                 text: "客路青山外，行舟绿水前。<br>潮平两岸阔，风正一帆悬。<br>海日生残夜，江春入旧年。<br>乡书何处达？归雁洛阳边。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "古诗",
-                title: "天净沙·秋思",
-                author: "马致远",
+                grade: "七年级上册", type: "古诗", title: "天净沙·秋思", author: "马致远",
                 text: "枯藤老树昏鸦，小桥流水人家，古道西风瘦马。<br>夕阳西下，断肠人在天涯。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "文言文",
-                title: "《世说新语》二则（咏雪）",
-                author: "刘义庆",
+                grade: "七年级上册", type: "文言文", title: "《世说新语》二则（咏雪）", author: "刘义庆",
                 text: "谢太傅寒雪日内集，与儿女讲论文义。<br>俄而雪骤，公欣然曰：白雪纷纷何所似？<br>兄子胡儿曰：撒盐空中差可拟。<br>兄女曰：未若柳絮因风起。<br>公大笑乐。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "文言文",
-                title: "《论语》十二章",
-                author: "孔子",
+                grade: "七年级上册", type: "文言文", title: "《论语》十二章", author: "孔子",
                 text: "子曰：学而时习之，不亦说乎？<br>有朋自远方来，不亦乐乎？<br>人不知而不愠，不亦君子乎？<br>吾日三省吾身：为人谋而不忠乎？与朋友交而不信乎？传不习乎？",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "文言文",
-                title: "诫子书",
-                author: "诸葛亮",
+                grade: "七年级上册", type: "文言文", title: "诫子书", author: "诸葛亮",
                 text: "夫君子之行，静以修身，俭以养德。<br>非淡泊无以明志，非宁静无以致远。",
                 done: false
             },
             {
-                grade: "七年级上册",
-                type: "文言文",
-                title: "狼",
-                author: "蒲松龄",
+                grade: "七年级上册", type: "文言文", title: "狼", author: "蒲松龄",
                 text: "一屠晚归，担中肉尽，止有剩骨。<br>途中两狼，缀行甚远。<br>屠惧，投以骨。<br>一狼得骨止，一狼仍从。",
                 done: false
             },
 
             /*************** 七年级下册 ****************/
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "竹里馆",
-                author: "王维",
+                grade: "七年级下册", type: "古诗", title: "竹里馆", author: "王维",
                 text: "独坐幽篁里，弹琴复长啸。<br>深林人不知，明月来相照。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "春夜洛城闻笛",
-                author: "李白",
+                grade: "七年级下册", type: "古诗", title: "春夜洛城闻笛", author: "李白",
                 text: "谁家玉笛暗飞声，散入春风满洛城。<br>此夜曲中闻折柳，何人不起故园情。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "逢入京使",
-                author: "岑参",
+                grade: "七年级下册", type: "古诗", title: "逢入京使", author: "岑参",
                 text: "故园东望路漫漫，双袖龙钟泪不干。<br>马上相逢无纸笔，凭君传语报平安。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "晚春",
-                author: "韩愈",
+                grade: "七年级下册", type: "古诗", title: "晚春", author: "韩愈",
                 text: "草树知春不久归，百般红紫斗芳菲。<br>杨花榆荚无才思，惟解漫天作雪飞。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "登幽州台歌",
-                author: "陈子昂",
+                grade: "七年级下册", type: "古诗", title: "登幽州台歌", author: "陈子昂",
                 text: "前不见古人，后不见来者。<br>念天地之悠悠，独怆然而涕下。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "望岳",
-                author: "杜甫",
+                grade: "七年级下册", type: "古诗", title: "望岳", author: "杜甫",
                 text: "岱宗夫如何？齐鲁青未了。<br>造化钟神秀，阴阳割昏晓。<br>荡胸生曾云，决眦入归鸟。<br>会当凌绝顶，一览众山小。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "登飞来峰",
-                author: "王安石",
+                grade: "七年级下册", type: "古诗", title: "登飞来峰", author: "王安石",
                 text: "飞来山上千寻塔，闻说鸡鸣见日升。<br>不畏浮云遮望眼，自缘身在最高层。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "古诗",
-                title: "游山西村",
-                author: "陆游",
+                grade: "七年级下册", type: "古诗", title: "游山西村", author: "陆游",
                 text: "莫笑农家腊酒浑，丰年留客足鸡豚。<br>山重水复疑无路，柳暗花明又一村。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "文言文",
-                title: "木兰诗",
-                author: "《乐府诗集》",
+                grade: "七年级下册", type: "文言文", title: "木兰诗", author: "《乐府诗集》",
                 text: "唧唧复唧唧，木兰当户织。<br>不闻机杼声，惟闻女叹息。<br>问女何所思，问女何所忆。<br>女亦无所思，女亦无所忆。",
                 done: false
             },
             {
-                grade: "七年级下册",
-                type: "文言文",
-                title: "陋室铭",
-                author: "刘禹锡",
+                grade: "七年级下册", type: "文言文", title: "陋室铭", author: "刘禹锡",
                 text: "山不在高，有仙则名。<br>水不在深，有龙则灵。<br>斯是陋室，惟吾德馨。<br>苔痕上阶绿，草色入帘青。<br>谈笑有鸿儒，往来无白丁。",
                 done: false
             },
 
             /*************** 八年级上册 ****************/
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "野望",
-                author: "王绩",
+                grade: "八年级上册", type: "古诗", title: "野望", author: "王绩",
                 text: "东皋薄暮望，徙倚欲何依。<br>树树皆秋色，山山唯落晖。<br>牧人驱犊返，猎马带禽归。<br>相顾无相识，长歌怀采薇。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "黄鹤楼",
-                author: "崔颢",
+                grade: "八年级上册", type: "古诗", title: "黄鹤楼", author: "崔颢",
                 text: "昔人已乘黄鹤去，此地空余黄鹤楼。<br>黄鹤一去不复返，白云千载空悠悠。<br>晴川历历汉阳树，芳草萋萋鹦鹉洲。<br>日暮乡关何处是？烟波江上使人愁。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "使至塞上",
-                author: "王维",
+                grade: "八年级上册", type: "古诗", title: "使至塞上", author: "王维",
                 text: "单车欲问边，属国过居延。<br>征蓬出汉塞，归雁入胡天。<br>大漠孤烟直，长河落日圆。<br>萧关逢候骑，都护在燕然。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "渡荆门送别",
-                author: "李白",
+                grade: "八年级上册", type: "古诗", title: "渡荆门送别", author: "李白",
                 text: "渡远荆门外，来从楚国游。<br>山随平野尽，江入大荒流。<br>月下飞天镜，云生结海楼。<br>仍怜故乡水，万里送行舟。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "钱塘湖春行",
-                author: "白居易",
+                grade: "八年级上册", type: "古诗", title: "钱塘湖春行", author: "白居易",
                 text: "孤山寺北贾亭西，水面初平云脚低。<br>几处早莺争暖树，谁家新燕啄春泥。<br>乱花渐欲迷人眼，浅草才能没马蹄。<br>最爱湖东行不足，绿杨阴里白沙堤。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "饮酒（其五）",
-                author: "陶渊明",
+                grade: "八年级上册", type: "古诗", title: "饮酒（其五）", author: "陶渊明",
                 text: "结庐在人境，而无车马喧。<br>问君何能尔？心远地自偏。<br>采菊东篱下，悠然见南山。<br>山气日夕佳，飞鸟相与还。<br>此中有真意，欲辨已忘言。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "春望",
-                author: "杜甫",
+                grade: "八年级上册", type: "古诗", title: "春望", author: "杜甫",
                 text: "国破山河在，城春草木深。<br>感时花溅泪，恨别鸟惊心。<br>烽火连三月，家书抵万金。<br>白头搔更短，浑欲不胜簪。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "雁门太守行",
-                author: "李贺",
+                grade: "八年级上册", type: "古诗", title: "雁门太守行", author: "李贺",
                 text: "黑云压城城欲摧，甲光向日金鳞开。<br>角声满天秋色里，塞上燕脂凝夜紫。<br>半卷红旗临易水，霜重鼓寒声不起。<br>报君黄金台上意，提携玉龙为君死。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "古诗",
-                title: "赤壁",
-                author: "杜牧",
+                grade: "八年级上册", type: "古诗", title: "赤壁", author: "杜牧",
                 text: "折戟沉沙铁未销，自将磨洗认前朝。<br>东风不与周郎便，铜雀春深锁二乔。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "文言文",
-                title: "三峡",
-                author: "郦道元",
+                grade: "八年级上册", type: "文言文", title: "三峡", author: "郦道元",
                 text: "自三峡七百里中，两岸连山，略无阙处。<br>重岩叠嶂，隐天蔽日。<br>自非亭午夜分，不见曦月。",
                 done: false
             },
             {
-                grade: "八年级上册",
-                type: "文言文",
-                title: "记承天寺夜游",
-                author: "苏轼",
+                grade: "八年级上册", type: "文言文", title: "记承天寺夜游", author: "苏轼",
                 text: "元丰六年十月十二日夜，解衣欲睡，月色入户，欣然起行。<br>念无与为乐者，遂至承天寺寻张怀民。<br>怀民亦未寝，相与步于中庭。<br>庭下如积水空明，水中藻、荇交横，盖竹柏影也。<br>何夜无月？何处无竹柏？但少闲人如吾两人者耳。",
                 done: false
             },
 
             /*************** 八年级下册 ****************/
             {
-                grade: "八年级下册",
-                type: "古诗",
-                title: "关雎",
-                author: "《诗经》",
+                grade: "八年级下册", type: "古诗", title: "关雎", author: "《诗经》",
                 text: "关关雎鸠，在河之洲。<br>窈窕淑女，君子好逑。<br>参差荇菜，左右流之。<br>窈窕淑女，寤寐求之。",
                 done: false
             },
             {
-                grade: "八年级下册",
-                type: "古诗",
-                title: "蒹葭",
-                author: "《诗经》",
+                grade: "八年级下册", type: "古诗", title: "蒹葭", author: "《诗经》",
                 text: "蒹葭苍苍，白露为霜。<br>所谓伊人，在水一方。<br>溯洄从之，道阻且长。<br>溯游从之，宛在水中央。",
                 done: false
             },
             {
-                grade: "八年级下册",
-                type: "古诗",
-                title: "送杜少府之任蜀州",
-                author: "王勃",
+                grade: "八年级下册", type: "古诗", title: "送杜少府之任蜀州", author: "王勃",
                 text: "城阙辅三秦，风烟望五津。<br>与君离别意，同是宦游人。<br>海内存知己，天涯若比邻。<br>无为在歧路，儿女共沾巾。",
                 done: false
             },
             {
-                grade: "八年级下册",
-                type: "古诗",
-                title: "望洞庭湖赠张丞相",
-                author: "孟浩然",
+                grade: "八年级下册", type: "古诗", title: "望洞庭湖赠张丞相", author: "孟浩然",
                 text: "八月湖水平，涵虚混太清。<br>气蒸云梦泽，波撼岳阳城。<br>欲济无舟楫，端居耻圣明。<br>坐观垂钓者，徒有羡鱼情。",
                 done: false
             },
             {
-                grade: "八年级下册",
-                type: "文言文",
-                title: "桃花源记",
-                author: "陶渊明",
+                grade: "八年级下册", type: "文言文", title: "桃花源记", author: "陶渊明",
                 text: "晋太元中，武陵人捕鱼为业。<br>缘溪行，忘路之远近。<br>忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷。",
                 done: false
             },
             {
-                grade: "八年级下册",
-                type: "文言文",
-                title: "小石潭记",
-                author: "柳宗元",
+                grade: "八年级下册", type: "文言文", title: "小石潭记", author: "柳宗元",
                 text: "从小丘西行百二十步，隔篁竹，闻水声，如鸣珮环，心乐之。<br>伐竹取道，下见小潭，水尤清冽。",
                 done: false
             },
 
             /*************** 九年级上册 ****************/
             {
-                grade: "九年级上册",
-                type: "古诗",
-                title: "月夜忆舍弟",
-                author: "杜甫",
+                grade: "九年级上册", type: "古诗", title: "月夜忆舍弟", author: "杜甫",
                 text: "戍鼓断人行，边秋一雁声。<br>露从今夜白，月是故乡明。<br>有弟皆分散，无家问死生。<br>寄书长不达，况乃未休兵。",
                 done: false
             },
             {
-                grade: "九年级上册",
-                type: "古诗",
-                title: "商山早行",
-                author: "温庭筠",
+                grade: "九年级上册", type: "古诗", title: "商山早行", author: "温庭筠",
                 text: "晨起动征铎，客行悲故乡。<br>鸡声茅店月，人迹板桥霜。<br>槲叶落山路，枳花明驿墙。<br>因思杜陵梦，凫雁满回塘。",
                 done: false
             },
             {
-                grade: "九年级上册",
-                type: "古诗",
-                title: "沁园春·雪",
-                author: "毛泽东",
+                grade: "九年级上册", type: "古诗", title: "沁园春·雪", author: "毛泽东",
                 text: "北国风光，千里冰封，万里雪飘。<br>望长城内外，惟余莽莽；大河上下，顿失滔滔。<br>山舞银蛇，原驰蜡象，欲与天公试比高。",
                 done: false
             },
             {
-                grade: "九年级上册",
-                type: "文言文",
-                title: "岳阳楼记",
-                author: "范仲淹",
+                grade: "九年级上册", type: "文言文", title: "岳阳楼记", author: "范仲淹",
                 text: "庆历四年春，滕子京谪守巴陵郡。<br>越明年，政通人和，百废具兴。<br>乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上。<br>属予作文以记之。",
                 done: false
             },
             {
-                grade: "九年级上册",
-                type: "文言文",
-                title: "醉翁亭记",
-                author: "欧阳修",
+                grade: "九年级上册", type: "文言文", title: "醉翁亭记", author: "欧阳修",
                 text: "环滁皆山也。<br>其西南诸峰，林壑尤美，望之蔚然而深秀者，琅琊也。<br>山行六七里，渐闻水声潺潺，而泻出于两峰之间者，酿泉也。",
                 done: false
             },
 
             /*************** 九年级下册 ****************/
             {
-                grade: "九年级下册",
-                type: "古诗",
-                title: "渔家傲·秋思",
-                author: "范仲淹",
+                grade: "九年级下册", type: "古诗", title: "渔家傲·秋思", author: "范仲淹",
                 text: "塞下秋来风景异，衡阳雁去无留意。<br>四面边声连角起，千嶂里，长烟落日孤城闭。<br>浊酒一杯家万里，燕然未勒归无计。<br>羌管悠悠霜满地，人不寐，将军白发征夫泪。",
                 done: false
             },
             {
-                grade: "九年级下册",
-                type: "古诗",
-                title: "江城子·密州出猎",
-                author: "苏轼",
+                grade: "九年级下册", type: "古诗", title: "江城子·密州出猎", author: "苏轼",
                 text: "老夫聊发少年狂，左牵黄，右擎苍，锦帽貂裘，千骑卷平冈。<br>为报倾城随太守，亲射虎，看孙郎。",
                 done: false
             },
             {
-                grade: "九年级下册",
-                type: "古诗",
-                title: "破阵子·为陈同甫赋壮词以寄之",
-                author: "辛弃疾",
+                grade: "九年级下册", type: "古诗", title: "破阵子·为陈同甫赋壮词以寄之", author: "辛弃疾",
                 text: "醉里挑灯看剑，梦回吹角连营。<br>八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。",
                 done: false
             },
             {
-                grade: "九年级下册",
-                type: "文言文",
-                title: "曹刿论战",
-                author: "《左传》",
+                grade: "九年级下册", type: "文言文", title: "曹刿论战", author: "《左传》",
                 text: "十年春，齐师伐我。<br>公将战，曹刿请见。<br>其乡人曰：肉食者谋之，又何间焉？<br>刿曰：肉食者鄙，未能远谋。<br>乃入见。",
                 done: false
             },
             {
-                grade: "九年级下册",
-                type: "文言文",
-                title: "出师表",
-                author: "诸葛亮",
+                grade: "九年级下册", type: "文言文", title: "出师表", author: "诸葛亮",
                 text: "先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。<br>然侍卫之臣不懈于内，忠志之士忘身于外者，盖追先帝之殊遇，欲报之于陛下也。",
                 done: false
             }
         ];
-
-        // 跟踪正在进行考核的篇目索引
-        let examActiveSet = new Set();
 
         // 本地存储同步
         let saveData = localStorage.getItem("poems");
@@ -616,21 +469,17 @@
             localStorage.setItem("poems", JSON.stringify(poems));
         }
 
-        // 核心功能：自动解析原文文本，剥离拼音，按句号/逗号生成"上句接下句"题目
+        // 自动解析原文，按标点断句生成题目
         function generateExercises(poem) {
             let cleanText = poem.text.replace(/<rt>.*?<\/rt>/g, '').replace(/<[^>]+>/g, '');
             let sentences = cleanText.split(/[，。！？；\n]/).map(s => s.trim()).filter(s => s.length > 1);
             let exercises = [];
             for (let i = 0; i < sentences.length - 1; i += 2) {
-                exercises.push({
-                    q: sentences[i],
-                    a: sentences[i + 1]
-                });
+                exercises.push({ q: sentences[i], a: sentences[i + 1] });
             }
             return exercises;
         }
 
-        // 重置考核输入框
         function resetExamInputs(index) {
             let p = poems[index];
             let exList = generateExercises(p);
@@ -641,9 +490,7 @@
                     inputEl.value = '';
                     inputEl.style.borderColor = '#ccc';
                 }
-                if (errEl) {
-                    errEl.style.display = 'none';
-                }
+                if (errEl) errEl.style.display = 'none';
             });
             let successMsg = document.getElementById('success_' + index);
             if (successMsg) successMsg.style.display = 'none';
@@ -652,10 +499,8 @@
         function render() {
             let box = document.getElementById("list");
             box.innerHTML = "";
-
             let grade = document.getElementById("gradeSelect").value;
             let key = document.getElementById("search").value;
-
             let arr = poems.filter(p => (grade == "全部" || p.grade == grade) && p.title.includes(key));
 
             document.getElementById("total").innerHTML = poems.length;
@@ -665,52 +510,36 @@
 
             arr.forEach(p => {
                 let realIndex = poems.findIndex(item => item.title === p.title);
-                let isExamActive = examActiveSet.has(realIndex);
                 let div = document.createElement("div");
                 div.className = "card " + (p.done ? "finished" : "");
 
                 let html = `
-            <h3>${p.title}</h3>
-            <p class="author">${p.author} &nbsp;|&nbsp; ${p.grade}</p>
-          `;
+                    <h3>${p.title}</h3>
+                    <p class="author">${p.author} &nbsp;|&nbsp; ${p.grade}</p>
+                    <button class="btn-view" id="viewBtn_${realIndex}" onclick="showText(${realIndex})">查看原文</button>
+                `;
 
                 if (p.done) {
-                    // 已打卡：始终可以查看原文
-                    html +=
-                        `<button class="btn-view" id="viewBtn_${realIndex}" onclick="showText(${realIndex})">查看原文</button>`;
-                    html +=
-                        `<button class="btn-cancel" onclick="cancelCheck(${realIndex})" style="margin-left:10px;">取消打卡</button>`;
+                    html += `<button class="btn-cancel" onclick="cancelCheck(${realIndex})" style="margin-left:10px;">取消打卡</button>`;
                 } else {
-                    // 未打卡：考核期间隐藏查看原文按钮
-                    let viewBtnStyle = isExamActive ? 'style="display:none;"' : '';
-                    html +=
-                        `<button class="btn-view" id="viewBtn_${realIndex}" ${viewBtnStyle} onclick="showText(${realIndex})">查看原文</button>`;
-
-                    let examBtnText = isExamActive ? '关闭考核' : '开始考核';
-                    html +=
-                        `<button class="btn-success" onclick="showExam(${realIndex})" style="margin-left:10px;">${examBtnText}</button>`;
+                    html += `<button class="btn-success" onclick="showExam(${realIndex})" style="margin-left:10px;">开始考核</button>`;
                 }
 
-                // 原文区
                 html += `<div class="text" id="text${realIndex}">${p.text}</div>`;
 
-                // 动态生成考核区（只有未打卡的才显示考核按钮，但这里都生成，通过show类控制）
                 let exList = generateExercises(p);
-                let examShowClass = isExamActive ? ' show' : '';
-                html += `<div class="exam-box${examShowClass}" id="exam${realIndex}">`;
+                html += `<div class="exam-box" id="exam${realIndex}">`;
                 if (exList.length > 0) {
-                    html +=
-                        `<p style="color:#e6a23c; margin-top:0;"><strong>📝 考核：请根据上句，输入下一句（自动忽略标点）</strong></p>`;
+                    html += `<p style="color:#e6a23c; margin-top:0;"><strong>📝 考核：请根据上句，输入下一句（自动忽略标点）</strong></p>`;
                     exList.forEach((ex, qIdx) => {
                         html += `
-                <div class="question">
-                    <span>${qIdx + 1}. ${ex.q}，</span>
-                    <input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入下句">
-                    <span class="err-msg" id="err_${realIndex}_${qIdx}">× 错误</span>
-                </div>`;
+                        <div class="question">
+                            <span>${qIdx + 1}. ${ex.q}，</span>
+                            <input type="text" id="ans_${realIndex}_${qIdx}" placeholder="请输入下句">
+                            <span class="err-msg" id="err_${realIndex}_${qIdx}">× 错误</span>
+                        </div>`;
                     });
-                    html +=
-                        `<button class="btn-success" style="width:100%; margin-top:10px;" onclick="submitExam(${realIndex})">提交答案</button>`;
+                    html += `<button class="btn-success" style="width:100%; margin-top:10px;" onclick="submitExam(${realIndex})">提交答案</button>`;
                     html += `<div class="success-msg" id="success_${realIndex}">🎉 恭喜你，全部正确，打卡成功！</div>`;
                 } else {
                     html += `<p style="color:#999;">该篇目暂无支持自动匹配的上下句。</p>`;
@@ -722,10 +551,10 @@
             });
         }
 
+        // 核心修改：只有打卡成功后才能查看原文，否则弹窗提示
         function showText(i) {
-            // 考核进行中不允许查看原文
-            if (examActiveSet.has(i)) {
-                alert("考核进行中，请先完成考核或关闭考核后再查看原文！");
+            if (!poems[i].done) {
+                alert("请先通过考核才能查看原文！");
                 return;
             }
             document.getElementById("text" + i).classList.toggle("show");
@@ -735,23 +564,12 @@
         function showExam(i) {
             let examBox = document.getElementById("exam" + i);
             let textBox = document.getElementById("text" + i);
-            let viewBtn = document.getElementById("viewBtn_" + i);
-
             if (examBox.classList.contains("show")) {
-                // 关闭考核区
                 examBox.classList.remove("show");
-                examActiveSet.delete(i);
-                if (viewBtn) viewBtn.style.display = 'inline-block';
-                // 重置输入框和错误状态
                 resetExamInputs(i);
             } else {
-                // 打开考核区
                 examBox.classList.add("show");
-                examActiveSet.add(i);
-                if (viewBtn) viewBtn.style.display = 'none';
-                // 确保原文隐藏
                 if (textBox) textBox.classList.remove("show");
-                // 重置输入（清除之前可能残留的内容）
                 resetExamInputs(i);
             }
         }
@@ -764,7 +582,6 @@
             exList.forEach((ex, qIdx) => {
                 let inputEl = document.getElementById(`ans_${index}_${qIdx}`);
                 let errEl = document.getElementById(`err_${index}_${qIdx}`);
-
                 let userAns = inputEl.value.trim().replace(/[。，！？；\s]/g, "");
                 let standardAns = ex.a.replace(/[。，！？；\s]/g, "");
 
@@ -782,11 +599,6 @@
                 document.getElementById('success_' + index).style.display = "block";
                 poems[index].done = true;
                 save();
-                // 考核通过，从活跃集合中移除，恢复查看原文按钮
-                examActiveSet.delete(index);
-                let viewBtn = document.getElementById('viewBtn_' + index);
-                if (viewBtn) viewBtn.style.display = 'inline-block';
-                // 禁用输入框防止再次修改
                 exList.forEach((ex, qIdx) => {
                     let inputEl = document.getElementById(`ans_${index}_${qIdx}`);
                     if (inputEl) inputEl.disabled = true;
@@ -799,7 +611,6 @@
 
         function cancelCheck(i) {
             poems[i].done = false;
-            examActiveSet.delete(i);
             save();
             render();
         }
@@ -810,8 +621,6 @@
 
         document.getElementById("gradeSelect").onchange = render;
         document.getElementById("search").oninput = render;
-
-        // 首次渲染页面
         render();
     </script>
 </body>
