@@ -1,9 +1,9 @@
 const CACHE_NAME = 'gushi-v2';
 
 const urlsToCache = [
-  './html_chuzhingrenjiaoxinban_soren.html',
-  './manifest.json',
-  './icons.png'
+  'html_chuzhingrenjiaoxinban_soren.html',
+  'manifest.json',
+  'icons.png'
 ];
 
 
