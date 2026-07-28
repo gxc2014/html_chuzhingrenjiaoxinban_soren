@@ -12,7 +12,7 @@
   },
   "icons": [
     {
-      "src": "/html_chuzhingrenjiaoxinban_soren/icons.png",
+      "src": "icons.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
