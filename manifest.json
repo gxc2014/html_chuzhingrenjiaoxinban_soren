@@ -10,10 +10,14 @@
     "name": "soren",
     "url": "wu"
   },
-  "icon": {
-    "72": "icons.png",
-    "192": "icon.png"
-  },
+  "icons": [
+    {
+      "src": "/html_chuzhingrenjiaoxinban_soren/icons.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
   "id": "H5532F52F",
   "launch_path": "https://gxc2014.github.io/html_chuzhingrenjiaoxinban_soren/html_chuzhingrenjiaoxinban_soren.html",
   "name": "尚儒升学_初中必背古诗文打卡通关",
